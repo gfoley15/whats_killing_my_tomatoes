@@ -9,6 +9,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         html,body,h1,h2,h3,h4,h5 {font-family: monospace}
+        body, html {
+            height: 100%;
+            font-family: monospace;
+        }
+
+        .bgimg {
+            background-position: center;
+            background-size: cover;
+            background-image: url("./static/images/tomato_plant_1.jpg");
+            min-height: 0%;
+        }
+
+        .menu {
+            display: none;
+        }
+
     </style>
     <script type="text/javascript">
         function myFunc(vars) {
@@ -19,8 +35,29 @@
     </script>
 </head>
 <body class="w3-light-grey">
+    <!-- Links-->
+    <div class="w3-top">
+        <div class="w3-row w3-padding w3-black">
+        <div class="w3-col s3">
+            <a href="/home" class="w3-button w3-block w3-black">HOME</a>
+        </div>
+        <div class="w3-col s3">
+            <a href="/overview" class="w3-button w3-block w3-black">OVERVIEW</a>
+        </div>
+        <div class="w3-col s3">
+            <a href="/knn" class="w3-button w3-block w3-black">MODELS</a>
+        </div>
+        <div class="w3-col s3">
+            <a href="/dashboard" class="w3-button w3-block w3-black">DASHBOARD</a>
+        </div>
+        </div>
+    </div>
 
     <!-- Header -->
+     <!-- Header with image -->
+    <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+        <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+    </header>
     <header class="w3-container w3-black" style="padding-top:0px">
         <h5><b>Tomato Image Classification</b></h5>
     </header>
@@ -28,13 +65,9 @@
 
     <!-- Image Upload -->
     <div class="w3-light-grey w3-display-container w3-col s12" style="padding-left:150px; padding-right:150px;">
-        <h5><b>Upload an Image of a Tomato for Processing</b></h5>
-        <form id="uploadForm" action="" method="POST" enctype="multipart/form-data">
+        <h5><b>Upload another Image of a Tomato for Processing</b></h5>
+        <form name="leafPic" id="uploadForm" action="" method="POST" enctype="multipart/form-data">
             <input type="file" name="image" id="imageInput" accept="image/*" required>
-            <br><br>
-            <img id="preview" src="#" alt="Image preview" style="display:none; width:300px;">
-            <br><br>
-            <input type="submit" value="Upload Image" class="w3-button w3-black">
         </form>
         <br>
     </div>
@@ -42,13 +75,11 @@
     <!-- Script -->
     <script>
         const imageInput = document.getElementById('imageInput');
-        const preview = document.getElementById('preview');
 
         imageInput.onchange = event => {
             const [file] = imageInput.files;
             if (file) {
-                preview.src = URL.createObjectURL(file);
-                preview.style.display = 'block';
+                document.forms["leafPic"].submit();
             }
         };
     </script>
