@@ -66,30 +66,5 @@ def knn_route():
 def dashboard():
     return render_template('dashboard.html')
 
-@app.route("/uploads", methods=['POST'])
-def upload_image():
-    if 'image' not in request.files:
-        return jsonify({"error": "No file part"})
-
-    file = request.files['image']
-
-    if file.filename == '':
-        return jsonify({"error": "No selected file"})
-
-    if file:
-        filename = file.filename
-        filepath = os.path.join('uploads', filename)
-        os.makedirs('uploads', exist_ok=True)
-        file.save(filepath)
-
-        image = preprocess_image(filepath)
-        prediction = model.predict(image)
-        rslt = (np.round(prediction[0]).astype(int))
-
-        if rslt == 0:
-            return jsonify({"result": "Healthy"})
-        else:
-            return jsonify({"result": "Sick"})
-
 if __name__ == '__main__':
     app.run(debug=True, port=5010)
