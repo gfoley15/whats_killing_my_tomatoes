@@ -1,10 +1,8 @@
 import pandas as pd
-from sklearn.cluster import KMeans
 from flask import Flask, render_template, request, jsonify
 import numpy as np
 from tensorflow.keras.models import load_model
 from PIL import Image
-import iop
 import os
 
 app = Flask(__name__)
@@ -44,8 +42,7 @@ def knn_route():
 
         if file:
             filename = file.filename
-            filepath = os.path.join('flask_app/static/images/Leaf', filename)
-            #os.makedirs('uploads', exist_ok=True)
+            filepath = os.path.join('flask_app\static\images\Leaf', filename)
             file.save(filepath)
 
             image = preprocess_image(filepath)
