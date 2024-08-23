@@ -44,8 +44,8 @@ def knn_route():
 
         if file:
             filename = file.filename
-            filepath = os.path.join('uploads', filename)
-            os.makedirs('uploads', exist_ok=True)
+            filepath = os.path.join('flask_app/static/images/Leaf', filename)
+            #os.makedirs('uploads', exist_ok=True)
             file.save(filepath)
 
             image = preprocess_image(filepath)
@@ -53,9 +53,9 @@ def knn_route():
             rslt = (np.round(prediction[0]).astype(int))
 
             if rslt == 0:
-                return render_template('knn_healthy.html', imagesrc=filepath)
+                return render_template('knn_healthy.html', imagesrc=filename)
             else:
-                return render_template('knn_unhealthy.html', imagesrc=filepath)
+                return render_template('knn_unhealthy.html', imagesrc=filename)
     else:
         return render_template('knn.html')
 
