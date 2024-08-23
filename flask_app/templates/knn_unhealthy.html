@@ -14,7 +14,8 @@
         function myFunc(vars) {
             return vars
         }
-        myVar = myFunc({{imagesrc|tojson}})
+        imgfile = myFunc({{imagesrc|tojson}})
+        regval = myFunc({{regvalue|tojson}})
     </script>
 </head>
 <body class="w3-light-grey">
@@ -54,20 +55,24 @@
 
     <!-- Header 2 -->
     <header class="w3-container w3-black" style="padding-top:22px">
-        <h5><b>Predictions</b></h5>
+        <h5><span id="tomresult"></span></h5>
     </header>
     <br>
     <div class="w3-light-grey w3-display-container w3-col" style="padding-left:150px">
-        <h5><b>Result</b></h5>
+        <h5><b>RESULTS: </b></h5>
         <div id="result" style="padding-left: 0px">
             <p>THIS LEAF IS NOT HEALTHY.</p>
         </div>
         <br>
     </div>
     <script>
+        tomrslt = document.getElementById('tomresult')
         rslt = document.getElementById('result')
-        fname = myVar.replace("\\","/")
-        rslt.innerHTML = "<p>THIS LEAF IS NOT HEALTHY.</p> " + fname + "<br> <img src=\"/static/images/Leaf/" + fname + "\">"
+        fname = imgfile.replace("\\","/")
+        tomrslt.innerHTML = "<img src=\"/static/images/rotten_tomato.jpg\" style=\"width:100px;height:100px;\">" 
+        rslt.innerHTML = "<p>I am " + regval 
+            + "% sure that this leaf is <u>NOT</u> healthy.</p> <img src=\"/static/images/Leaf/" 
+            + fname + "\"></p><br>filename: " + fname + "<br> "
     </script>
 
 </body>

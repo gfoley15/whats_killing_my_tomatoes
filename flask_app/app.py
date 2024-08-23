@@ -29,7 +29,7 @@ def overview():
     return render_template('overview.html') 
 
 @app.route("/knn", methods=["GET", "POST"])
-@app.route('/knn/<imagesrc>', methods=["GET", "POST"])
+@app.route('/knn/<imagesrc>/<regvalue>', methods=["GET", "POST"])
 def knn_route():
     if request.method == 'POST':
         if 'image' not in request.files:
@@ -49,10 +49,16 @@ def knn_route():
             prediction = model.predict(image)
             rslt = (np.round(prediction[0]).astype(int))
 
+            valpercent = prediction[0].astype(float)
+            failpercent = str(round((valpercent[0]*100), ndigits=2))
+
+            valpercent_inv = 1 - prediction[0].astype(float)
+            passpercent = str(round((valpercent_inv[0]*100), ndigits=2))
+
             if rslt == 0:
-                return render_template('knn_healthy.html', imagesrc=filename)
+                return render_template('knn_healthy.html', imagesrc=filename, regvalue=passpercent)
             else:
-                return render_template('knn_unhealthy.html', imagesrc=filename)
+                return render_template('knn_unhealthy.html', imagesrc=filename, regvalue=failpercent)
     else:
         return render_template('knn.html')
 
