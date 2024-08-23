@@ -10,18 +10,10 @@
     <style>
         html,body,h1,h2,h3,h4,h5 {font-family: monospace}
     </style>
-    <script>
-        const queryString = window.location.search;
-        console.log(queryString);
-        const urlParams = new URLSearchParams(queryString);
-        const leafimage = urlParams.get('imagesrc')
-        console.log(leafimage);
+    <script type="text/javascript">
         function myFunc(vars) {
             return vars
         }
-    </script>
-    <!--<script type="text/javascript" {{ url_for('static', filename='app.js')}}></script>-->
-    <script type="text/javascript">
         myVar = myFunc({{imagesrc|tojson}})
     </script>
 </head>
@@ -75,9 +67,7 @@
     <script>
         rslt = document.getElementById('result')
         fname = myVar.replace("\\","/")
-        rslt.innerHTML = "<p>THIS LEAF IS NOT HEALTHY.</p> " + fname + "<br> <img src=\"uploads/test.JPG\">"
-        //images = image;
-        //alert(fname);
+        rslt.innerHTML = "<p>THIS LEAF IS NOT HEALTHY.</p> " + fname + "<br> <img src=\"/static/images/Leaf/" + fname + "\">"
     </script>
 
 </body>
