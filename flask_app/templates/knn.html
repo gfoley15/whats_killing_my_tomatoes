@@ -9,11 +9,49 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         html,body,h1,h2,h3,h4,h5 {font-family: monospace}
+
+        body, html {
+            height: 100%;
+            font-family: monospace;
+        }
+
+        .bgimg {
+            background-position: center;
+            background-size: cover;
+            background-image: url("./static/images/tomato_plant_1.jpg");
+            min-height: 30%;
+        }
+
+        .menu {
+            display: none;
+        }
+
     </style>
 </head>
 <body class="w3-light-grey">
+    <!-- Links-->
+    <div class="w3-top">
+        <div class="w3-row w3-padding w3-black">
+        <div class="w3-col s3">
+            <a href="/home" class="w3-button w3-block w3-black">HOME</a>
+        </div>
+        <div class="w3-col s3">
+            <a href="/overview" class="w3-button w3-block w3-black">OVERVIEW</a>
+        </div>
+        <div class="w3-col s3">
+            <a href="/knn" class="w3-button w3-block w3-black">MODELS</a>
+        </div>
+        <div class="w3-col s3">
+            <a href="/dashboard" class="w3-button w3-block w3-black">DASHBOARD</a>
+        </div>
+        </div>
+    </div>
 
     <!-- Header -->
+     <!-- Header with image -->
+    <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+        <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+    </header>
     <header class="w3-container w3-black" style="padding-top:0px">
         <h5><b>Tomato Image Classification</b></h5>
     </header>
