@@ -42,7 +42,7 @@ def knn_route():
 
         if file:
             filename = file.filename
-            filepath = os.path.join('flask_app\static\images\Leaf', filename)
+            filepath = os.path.join('static', 'images', 'Leaf', filename)
             file.save(filepath)
 
             image = preprocess_image(filepath)

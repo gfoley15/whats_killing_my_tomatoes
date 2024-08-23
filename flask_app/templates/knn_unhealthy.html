@@ -8,27 +8,21 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        html,body,h1,h2,h3,h4,h5 {font-family: monospace}
+        html, body, h1, h2, h3, h4, h5 { font-family: monospace; }
     </style>
-    <script type="text/javascript">
-        function myFunc(vars) {
-            return vars
-        }
-        myVar = myFunc({{imagesrc|tojson}})
-    </script>
 </head>
 <body class="w3-light-grey">
 
     <!-- Header -->
-    <header class="w3-container w3-black" style="padding-top:0px">
+    <header class="w3-container w3-black" style="padding-top:0;">
         <h5><b>Tomato Image Classification</b></h5>
     </header>
     <br>
 
     <!-- Image Upload -->
-    <div class="w3-light-grey w3-display-container w3-col s12" style="padding-left:150px; padding-right:150px;">
+    <div class="w3-light-grey w3-display-container w3-col s12" style="padding: 0 150px;">
         <h5><b>Upload an Image of a Tomato for Processing</b></h5>
-        <form id="uploadForm" action="" method="POST" enctype="multipart/form-data">
+        <form id="uploadForm" action="/uploads" method="POST" enctype="multipart/form-data">
             <input type="file" name="image" id="imageInput" accept="image/*" required>
             <br><br>
             <img id="preview" src="#" alt="Image preview" style="display:none; width:300px;">
@@ -40,35 +34,28 @@
 
     <!-- Script -->
     <script>
-        const imageInput = document.getElementById('imageInput');
-        const preview = document.getElementById('preview');
-
-        imageInput.onchange = event => {
-            const [file] = imageInput.files;
+        document.getElementById('imageInput').onchange = function(event) {
+            const file = event.target.files[0];
             if (file) {
-                preview.src = URL.createObjectURL(file);
-                preview.style.display = 'block';
+                document.getElementById('preview').src = URL.createObjectURL(file);
+                document.getElementById('preview').style.display = 'block';
             }
         };
     </script>
 
-    <!-- Header 2 -->
-    <header class="w3-container w3-black" style="padding-top:22px">
+    <!-- Predictions -->
+    <header class="w3-container w3-black" style="padding-top:22px;">
         <h5><b>Predictions</b></h5>
     </header>
     <br>
     <div class="w3-light-grey w3-display-container w3-col" style="padding-left:150px">
         <h5><b>Result</b></h5>
-        <div id="result" style="padding-left: 0px">
+        <div id="result" style="padding-left:0;">
             <p>THIS LEAF IS NOT HEALTHY.</p>
+            <img src="{{ url_for('static', filename='images/Leaf/' + imagesrc) }}" alt="Uploaded Image" style="width:300px;">
         </div>
         <br>
     </div>
-    <script>
-        rslt = document.getElementById('result')
-        fname = myVar.replace("\\","/")
-        rslt.innerHTML = "<p>THIS LEAF IS NOT HEALTHY.</p> " + fname + "<br> <img src=\"/static/images/Leaf/" + fname + "\">"
-    </script>
 
 </body>
 </html>
