@@ -6,9 +6,8 @@ from PIL import Image
 import os
 
 app = Flask(__name__)
-
-model_path = os.path.join(os.path.dirname(__file__), 'model', 'Healthy_or_Sick.h5')
-model = load_model(model_path, compile=False)
+model_path_Healthy_or_Sick = os.path.join(os.path.dirname(__file__), 'model', 'Healthy_or_Sick.h5')
+Healthy_or_Sick = load_model(model_path_Healthy_or_Sick, compile=False)
 
 def preprocess_image(image_path):
     image = Image.open(image_path).resize((256, 256))
@@ -46,13 +45,13 @@ def knn_route():
             file.save(filepath)
 
             image = preprocess_image(filepath)
-            prediction = model.predict(image)
-            rslt = (np.round(prediction[0]).astype(int))
+            Healthy_or_Sick_pred = Healthy_or_Sick.predict(image)
+            rslt = (np.round(Healthy_or_Sick_pred[0]).astype(int))
 
-            valpercent = prediction[0].astype(float)
+            valpercent = Healthy_or_Sick_pred[0].astype(float)
             failpercent = str(round((valpercent[0]*100), ndigits=2))
 
-            valpercent_inv = 1 - prediction[0].astype(float)
+            valpercent_inv = 1 - Healthy_or_Sick_pred[0].astype(float)
             passpercent = str(round((valpercent_inv[0]*100), ndigits=2))
 
             if rslt == 0:
@@ -66,8 +65,20 @@ def knn_route():
 def dashboard():
     return render_template('dashboard.html')
 
-@app.route("/Johns_Anlysis")
-def Johns_Anlysis():
+@app.route("/dashboard/Garrett")
+def dashboard_garrett():
+    return render_template('logistic_regression_model_GF.html')
+
+@app.route("/dashboard/Mohamed")
+def dashboard_mohamed():
+    return render_template('nn_accuracy_model_MI.html')
+
+@app.route("/dashboard/Amanuel")
+def dashboard_amanuel():
+    return render_template('cnn_accuracy_model_AM.html')
+
+@app.route("/dashboard/John")
+def dashboard_john():
     return render_template('Healthy_Sick_Anlysis_JT.html')
 
 if __name__ == '__main__':

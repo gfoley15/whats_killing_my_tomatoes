@@ -8,22 +8,56 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: monospace}
-</style>
+  body,h1,h2,h3,h4,h5,h6 {font-family: monospace}
+  body, html {
+                  height: 100%;
+                  font-family: monospace;
+                  background-color: black;
+              }
+
+      .bgimg {
+          background-position: center;
+          background-size: cover;
+          background-image: url("./static/images/tomato_plant_1.jpg");
+          min-height: 30%;
+      }
+
+      .menu {
+          display: none;
+      }
+
+  </style>
 </head>
-<body class="w3-light-grey w3-content" style="max-width:1600px">
-
+<body class="w3-light-gray">
 <!-- !PAGE CONTENT! -->
-
-  <!-- Header -->
-  <header id="portfolio" class="w3-block w3-black" style="padding-left: 25px;">
-    <h1><b>PROJECT 4</b></h1>
-
-    </div>
-  </header>
+      <!-- Links-->
+      <div class="w3-row-padding">
+        <div class="w3-row w3-padding w3-black">
+        <div class="w3-col s3">
+            <a href="/home" class="w3-button w3-block w3-black">HOME</a>
+        </div>
+        <div class="w3-col s3">
+            <a href="/overview" class="w3-button w3-block w3-black">OVERVIEW</a>
+        </div>
+        <div class="w3-col s3">
+            <a href="/knn" class="w3-button w3-block w3-black">MODELS</a>
+        </div>
+        <div class="w3-col s3">
+            <a href="/dashboard" class="w3-button w3-block w3-black">DASHBOARD</a>
+        </div>
+        </div>
+      </div>
   
+      <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+        <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+    </header>
   <!-- Photo Grid-->
-  <div class="w3-row-padding">
+  <div class="w3-row-padding" style="padding: 25px;">
+      <!-- Header -->
+
+  <header id="portfolio" class="w3-block w3-black" style="padding-left: 25px;">
+    <h1 class="w3-center"><b>What's Killing My Tomatoes!</b></h1>
+  </header>
     <div class="w3-third w3-container w3-margin-bottom">
       <button><a href='/overview'><img src="./static/images/tomato_2.jpg" style="width:100%" class="w3-hover-opacity"></a></button>
       <div class="w3-container w3-white">

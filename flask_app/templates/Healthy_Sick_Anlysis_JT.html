@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Overview Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+    html,body,h1,h2,h3,h4,h5 {font-family: monospace}
+    body, html {
+                height: 100%;
+                font-family: monospace;
+            }
+
+    .bgimg {
+        background-position: center;
+        background-size: cover;
+        background-image: url("../static/images/DNA_Tomato.png");
+        min-height: 30%;
+    }
+
+    .menu {
+        display: none;
+    }
+
+</style>
+</head>
+<body class="w3-light-grey">
+    <!-- Links-->
+    <div class="w3-top">
+      <div class="w3-row w3-padding w3-black">
+      <div class="w3-col s3">
+          <a href="/home" class="w3-button w3-block w3-black">HOME</a>
+      </div>
+      <div class="w3-col s3">
+          <a href="/overview" class="w3-button w3-block w3-black">OVERVIEW</a>
+      </div>
+      <div class="w3-col s3">
+          <a href="/knn" class="w3-button w3-block w3-black">MODELS</a>
+      </div>
+      <div class="w3-col s3">
+          <a href="/dashboard" class="w3-button w3-block w3-black">DASHBOARD</a>
+      </div>
+      </div>
+    </div>
+  <!-- !PAGE CONTENT! -->
+    <!-- Header with image -->
+    <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+        <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+    </header>
+    <header class="w3-container w3-black" style="padding-top:0px">
+      <div class="w3-col s3">
+        <a href="/dashboard/Garrett" class="w3-button w3-block w3-black">Garrett</a>
+      </div>
+      <div class="w3-col s3">
+        <a href="/dashboard/Mohamed" class="w3-button w3-block w3-black">Mohamed</a>
+      </div>
+      <div class="w3-col s3">
+        <a href="/dashboard/Amanuel" class="w3-button w3-block w3-black">Amanuel</a>
+      </div>
+      <div class="w3-col s3">
+        <a href="/dashboard/John" class="w3-button w3-block w3-black">John</a>
+      </div>
+    </header>
+    <br>
+    
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+
+<!-- Overview Container -->
+<div class="w3-container" id="OVERVIEW">
+  <div class="w3-content" style="max-width:1000px">
+    <h1 class="w3-center w3-padding-10"><b>CNN IMAGE CLASSIFICATION OVERVIEW</b></h1>
+    <h2 class="w3-center w3-padding-10"><b>Model: Healthy_or_Sick.h5</b></h2>
+    <hr>
+    <h4><p>This CNN was built using a Tensorflow Keras Model. 3000 images from 2 basic categories were used.</p></h4>
+    <div style="border-style: solid; border-width: 5px; border-radius: 25px;padding:20px;"><p>MODEL TRAINING RESULTS:</p>
+
+      Epoch 1/5<br>
+      38/38 [==============================] - 66s 2s/step - loss: 0.8523 - accuracy: 0.6762<br>
+      Epoch 2/5<br>
+      38/38 [==============================] - 66s 2s/step - loss: 0.1434 - accuracy: 0.9425<br>
+      Epoch 3/5<br>
+      38/38 [==============================] - 67s 2s/step - loss: 0.0881 - accuracy: 0.9675<br>
+      Epoch 4/5<br>
+      38/38 [==============================] - 64s 2s/step - loss: 0.0431 - accuracy: 0.9887<br>
+      Epoch 5/5<br>
+      38/38 [==============================] - 64s 2s/step - loss: 0.0221 - accuracy: 0.9937<br>
+    </div>
+  </div>
+  <hr>
+  <div class="w3-content" style="max-width:1000px">
+    <div style="border-style: solid; border-width: 5px; border-radius: 25px;padding:20px;">
+      <p>MODEL EVALUATION RESULTS:</p>
+
+    19/19 [==============================] - 4s 191ms/step - loss: 0.1004 - accuracy: 0.9633<br>
+    [0.10043543577194214, 0.9633333086967468]<br>
+    </div>
+  </div>
+  <hr>
+  <div class="w3-content" style="max-width:1000px">
+    <div style="border-style: solid; border-width: 5px; border-radius: 25px;padding:20px;">
+      <p>RANDOM IMAGE PREDICTION RESULTS:</p>
+
+      The model is 96% sure Leaf #1.png is healthy<br>
+      The model is 100% sure Leaf #2.png is sick<br>
+      The results are correct.<br>
+      <br>
+      Leaf #1 / Leaf #2<br>
+      <img src='../static/images/Leaf_1.png'><img src="../static/images/Leaf_2.png">
+      
+    </div>
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+</body>
+</html>
