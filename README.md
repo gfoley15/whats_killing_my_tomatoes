@@ -5,10 +5,14 @@
 <p><strong>Overview:</strong> We plan to tackle this question by developing multiple machine learning models and selecting the best option. Our goal is to enable users to upload images of their own tomato plants and utlize our model to access their plants' health.</p>
 
 <h3>Part II: Our Process</h3>
+
 - Obtain plant disease dataset: https://www.kaggle.com/datasets/emmarex/plantdisease/data
 - Image normalization
+  
 - Develop and train models
+  
 - Build a flask app for the model with image upload capabilities.
+  
 - Build dashboards for each model ccreated to compare and contrast the different models.
 
 <h3>Part III: Models Developed</h3>
