@@ -9,10 +9,15 @@
 4. Build a flask app for the model with image upload capabilities.
 5. Build dashboards for each model ccreated to compare and contrast the different models.
 <h3>Models Developed</h3>
-1. Amanuel - CNN Model
-2. Garrett - Logistic Regression Models
-3. John - CNN Models
-4. Mohamed - NN Model
+
+- Amanuel - CNN Model
+  
+- Garrett - Logistic Regression Models
+   
+- John - CNN Models
+
+- Mohamed - NN Model
+   
 <h3>Limitations and Next Steps</h3>
 <p><strong>Limitations:</strong>
 
