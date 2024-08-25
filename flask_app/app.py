@@ -66,5 +66,9 @@ def knn_route():
 def dashboard():
     return render_template('dashboard.html')
 
+@app.route("/Johns_Anlysis")
+def Johns_Anlysis():
+    return render_template('Healthy_Sick_Anlysis_JT.html')
+
 if __name__ == '__main__':
     app.run(debug=True, port=5010)
