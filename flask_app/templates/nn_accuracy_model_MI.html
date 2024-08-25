@@ -17,7 +17,7 @@
     .bgimg {
         background-position: center;
         background-size: cover;
-        background-image: url("./static/images/tomato_plant_1.jpg");
+        background-image: url("../static/images/tomato_plant_1.jpg");
         min-height: 30%;
     }
 
@@ -68,7 +68,18 @@
 
     <!-- Model Descriptions -->
 <div class="w3-light-grey w3-display-container w3-col s12" style="padding-left:150px; padding-right:150px;">
-  <h1><b>Click on the person's name above to see their analysis page!</b></h1>
+  <h5><b>Model Description</b></h5>
+  
+<!-- Confusion Matrix Comparison -->
+<div class="w3-light-grey w3-display-container w3-col s6" style="padding-left:150px">
+  <div id="Matrix" style="padding-left: 0px">
+      <!-- Images for Confusion Matrix -->
+      <h6>Analysis</h6>
+      <img src='../static/images/TomatoDiseases_nn_accuracy.png' alt="TomatoDiseases_nn_accuracy.png" style="width:100%; max-width:500px;">
+      <img src='../static/images/TomatoDiseases_nn_loss.png' alt="TomatoDiseases_nn_loss.png" style="width:100%; max-width:500px;">
+  </div>
+  <br>
+</div>
 
   <!-- End page content -->
 

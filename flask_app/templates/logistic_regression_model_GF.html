@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    html,body,h1,h2,h3,h4,h5 {font-family: monospace}
+    body, html {
+                height: 100%;
+                font-family: monospace;
+            }
+
+    .bgimg {
+        background-position: center;
+        background-size: cover;
+        background-image: url("../static/images/tomato_plant_1.jpg");
+        min-height: 30%;
+    }
+
+    .menu {
+        display: none;
+    }
+
+</style>
+</head>
+<body class="w3-light-grey">
+  <!-- Links-->
+  <div class="w3-top">
+    <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+        <a href="/home" class="w3-button w3-block w3-black">HOME</a>
+    </div>
+    <div class="w3-col s3">
+        <a href="/overview" class="w3-button w3-block w3-black">OVERVIEW</a>
+    </div>
+    <div class="w3-col s3">
+        <a href="/knn" class="w3-button w3-block w3-black">MODELS</a>
+    </div>
+    <div class="w3-col s3">
+        <a href="/dashboard" class="w3-button w3-block w3-black">DASHBOARD</a>
+    </div>
+    </div>
+  </div>
+<!-- !PAGE CONTENT! -->
+  <!-- Header with image -->
+  <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+      <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+  </header>
+  <header class="w3-container w3-black" style="padding-top:0px">
+    <div class="w3-col s3">
+      <a href="/dashboard/Garrett" class="w3-button w3-block w3-black">Garrett</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="/dashboard/Mohamed" class="w3-button w3-block w3-black">Mohamed</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="/dashboard/Amanuel" class="w3-button w3-block w3-black">Amanuel</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="/dashboard/John" class="w3-button w3-block w3-black">John</a>
+    </div>
+  </header>
+  <br>
+
+    <!-- Model Descriptions -->
+<div class="w3-light-grey w3-display-container w3-col s12" style="padding-left:150px; padding-right:150px;">
+  <h1><b>logistic regression model</b></h1>
+  <h5><b>Model Descriptions</b></h5>
+  <div id="Descriptions" style="padding-left: 0px;">
+      <h6>All Tomato Images Model</h6>
+      <p>The All Tomato Images Model demonstrates strong overall performance with an accuracy of 95%. It excels in identifying Unhealthy cases, with a precision of 96%, recall of 98%, and an F1-score of 97%. This represents the model is highly effective at correctly classifying Unhealthy instances. However, the model's performance lackluster for Healthy cases, where it had a lower precision of 81%, poor recall of 64%, and an F1-score of 72%. This disparity pushed a re-engineering of the model classes of Healthy vs. Unhealthy since there were significantly more Unhealthy samples than Healthy ones. While the model performs well overall, further refinement was needed to improve identification of Healthy cases.</p>
+      <h6>Even Tomato Distribution Model</h6>
+      <p>With Even Tomato Distribution Model, images were gathered with a focused effort to have an even distribution of healthy and unhealthy tomatoes. The scaler was also adjusted to StandardScaler with the goal to potentially improve overall performance. The results reflect significant improvements. The model attained an accuracy of 97%, correctly classifying 735 out of 749 Unhealthy cases and 727 out of 753 Healthy cases. This results in a high precision of 97% and recall of 98% for Unhealthy tomatoes, and a precision of 98% and recall of 97% for Healthy tomatoes. The balanced performance across both classes, with an F1-score of 97% for each class, represents that the model effectively handles tomato image classification, in both classes. The increased consistency and robust performance of the Even Tomato Distribution Model showcase the adjustments made led to a well-balanced and more effective model.</p>
+  </div>
+  <br>
+</div>
+
+<!-- Confusion Matrix Comparison -->
+<div class="w3-light-grey w3-display-container w3-col s6" style="padding-left:150px">
+  <h5><b>Confusion Matrix - All Tomato Images Model</b></h5>
+  <div id="Matrix" style="padding-left: 0px">
+      <!-- Images for Confusion Matrix -->
+      <h6>Chart</h6>
+      <img src='../static/images/confusion_matrix_text.png' alt="All Tomato Images Model Confusion Matrix" style="width:100%; max-width:500px;">
+      <br>
+      <h6>Heat Map</h6>
+      <img src='../static/images/confusion_matrix.png' alt="Even Tomato Distribution Model Confusion Matrix" style="width:100%; max-width:500px;">
+  </div>
+  <br>
+</div>
+
+<!-- Confusion Matrix Comparison -->
+<div class="w3-light-grey w3-display-container w3-col s6" style="padding-left:150px">
+  <h5><b>Confusion Matrix - Even Tomato Distribution Model</b></h5>
+  <div id="Matrix" style="padding-left: 0px">
+      <!-- Images for Confusion Matrix -->
+      <h6>Chart</h6>
+      <img src='../static/images/even_confusion_matrix_text.png' alt="All Tomato Images Model Confusion Matrix" style="width:100%; max-width:500px;">
+      <br>
+      <h6>Heat Map</h6>
+      <img src='../static/images/even_confusion_matrix.png' alt="Even Tomato Distribution Model Confusion Matrix" style="width:100%; max-width:500px;">
+  </div>
+  <br>
+</div>
+
+<!-- Classification Report Comparison -->
+<div class="w3-light-grey w3-display-container w3-col s6" style="padding-left:150px">
+  <h5><b>Classification Report - All Tomato Images Model</b></h5>
+  <div id="Matrix" style="padding-left: 0px">
+      <!-- Image for Confusion Matrix -->
+      <h6>Chart</h6>
+      <img src='../static/images/classification_report.png' alt="All Tomato Images Model Confusion Matrix" style="width:100%; max-width:500px;">
+  </div>
+  <br>
+</div>
+
+<!-- Classification Report Comparison -->
+<div class="w3-light-grey w3-display-container w3-col s6" style="padding-left:150px">
+  <h5><b>Classification Report - Even Tomato Distribution Model</b></h5>
+  <div id="Matrix" style="padding-left: 0px">
+      <!-- Image for Confusion Matrix -->
+      <h6>Chart</h6>
+      <img src='../static/images/even_classification_report.png' alt="All Tomato Images Model Confusion Matrix" style="width:100%; max-width:500px;">
+  </div>
+  <br>
+</div>
+
+  <!-- End page content -->
+
+</body>
+</html>
