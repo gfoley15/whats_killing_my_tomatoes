@@ -15,12 +15,14 @@
 4. Mohamed - NN Model
 <h3>Limitations and Next Steps</h3>
 <p><strong>Limitations:</strong>
-- insert text here
+
+  - insert text here
   
 - insert text here
-- 
+  
 - insert text here</p>
 <p><strong>Next Steps:</strong>
+
 - insert text here
   
 - insert text here
