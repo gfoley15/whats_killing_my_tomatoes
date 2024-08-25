@@ -18,11 +18,7 @@ def preprocess_image(image_path):
 @app.route("/")
 def default():
     return render_template('index.html')
-
-@app.route("/home")
-def home():
-    return render_template('home.html') 
-
+ 
 @app.route("/overview")
 def overview():
     return render_template('overview.html') 
