@@ -6,7 +6,7 @@ from PIL import Image
 import os
 
 app = Flask(__name__)
-model_path_Healthy_or_Sick = os.path.join(os.path.dirname(__file__), 'model', 'Healthy_or_Sick.h5')
+model_path_Healthy_or_Sick = os.path.join(os.path.dirname(__file__), 'model', 'all_cat.h5')
 Healthy_or_Sick = load_model(model_path_Healthy_or_Sick, compile=False)
 
 def preprocess_image(image_path):
@@ -43,21 +43,27 @@ def cnn_route():
             filename = file.filename
             filepath = os.path.join('flask_app\static\images\Leaf', filename)
             file.save(filepath)
-
             image = preprocess_image(filepath)
-            Healthy_or_Sick_pred = Healthy_or_Sick.predict(image)
-            rslt = (np.round(Healthy_or_Sick_pred[0]).astype(int))
 
-            valpercent = Healthy_or_Sick_pred[0].astype(float)
-            failpercent = str(round((valpercent[0]*100), ndigits=2))
+            names = {0:"Bacterial spot", 
+                     1:"Early blight",
+                     2:"healthy",
+                     3:"Late blight",
+                     4:"Leaf Mold",
+                     5:"Mosaic virus",
+                     6:"Septoria leaf spot",
+                     7:"Target Spot",
+                     8:"Two spotted spider mite",
+                     9:"Yellow Leaf Curl Virus"}
 
-            valpercent_inv = 1 - Healthy_or_Sick_pred[0].astype(float)
-            passpercent = str(round((valpercent_inv[0]*100), ndigits=2))
-
-            if rslt == 0:
-                return render_template('cnn_healthy.html', imagesrc=filename, regvalue=passpercent)
+            predict_x=Healthy_or_Sick.predict(image) 
+            classes_x=np.argmax(predict_x,axis=1)
+            model_class = names.get(classes_x[0])
+            if model_class == "Healthy":
+                return render_template('cnn_healthy.html', imagesrc=filename, regvalue=model_class)
             else:
-                return render_template('cnn_unhealthy.html', imagesrc=filename, regvalue=failpercent)
+                return render_template('cnn_unhealthy.html', imagesrc=filename, regvalue=model_class)
+
     else:
         return render_template('cnn.html')
 
