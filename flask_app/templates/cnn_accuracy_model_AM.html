@@ -68,7 +68,80 @@
 
     <!-- Model Descriptions -->
 <div class="w3-light-grey w3-display-container w3-col s12" style="padding-left:150px; padding-right:150px;">
-  <h5><b>Model Description</b></h5>
+  <header class="w3-container w3-black" style="padding-top:22px">
+    <h5><b>Convolutional Neural Network</b></h5>
+  </header>
+  <br>
+  <div class="w3-container">
+    <h5><b>Project Summary</b></h5>
+    <p>
+        <b>Objective:</b> The objective of this project is to develop a machine learning model capable of classifying tomato leaf images into two categories: <i>Tomato_healthy</i> and <i>Tomato_unhealthy</i>. The goal is to assist in early detection of diseases in tomato plants, which is critical for ensuring crop health and yield.
+    </p>
+    <p>
+        <b>Methodology:</b> 
+        <ul>
+            <li><b>Dataset Preparation:</b> The dataset was derived from the PlantVillage dataset, with images categorized by health status and various diseases. Tomato_healthy and Tomato_unhealthy categories were created for model training.</li>
+            <li><b>Image Preprocessing:</b> Images were resized, normalized, and labels were binarized for the classification task.</li>
+            <li><b>Model Development:</b> A Convolutional Neural Network (CNN) was built with convolutional layers, pooling layers, and dense layers for feature extraction and classification.</li>
+            <li><b>Model Evaluation:</b> The model was evaluated using a confusion matrix, ROC curve, and precision-recall curve, showing high accuracy and strong class separation.</li>
+            <li><b>Testing:</b> The trained model was tested on new images to predict health status, with high confidence in the results.</li>
+        </ul>
+    </p>
+    <p>
+        <b>Results:</b> The model achieved satisfactory accuracy, with the evaluation plots demonstrating balanced performance and a strong ability to distinguish between healthy and unhealthy leaves.
+    </p>
+    <p>
+        <b>Conclusion:</b> The developed model can assist in early detection of tomato plant diseases, helping farmers and agronomists protect their crops effectively.
+    </p>
+  </div>
+  <br>
+  
+  <!-- Slider for Evaluation Plots -->
+  <div class="w3-content w3-display-container" style="max-width:800px; margin:auto">
+    <h5><b>Evaluation Plots</b></h5>
+    <div class="w3-display-container mySlides">
+        <img src="../static/images/cnn/confusion_matrix.png" style="width:100%">
+    </div>
+    <div class="w3-display-container mySlides">
+      <img src="../static/images/cnn/accuracy.png" style="width:100%">
+    </div>
+    <div class="w3-display-container mySlides">
+        <img src="../static/images/cnn/roc_curve.png" style="width:100%">
+    </div>
+    <div class="w3-display-container mySlides">
+        <img src="../static/images/cnn/precision_recall_curve.png" style="width:100%">
+    </div>
+    <div class="w3-display-container mySlides">
+      <img src="../static/images/cnn/accuracy_and_loss.png" style="width:100%">
+  </div>
+  
+    <!-- Slider Controls -->
+    <button class="w3-button w3-black w3-display-left" onclick="plusSlides(-1)">&#10094;</button>
+    <button class="w3-button w3-black w3-display-right" onclick="plusSlides(1)">&#10095;</button>
+  </div>
+  
+  <script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+  showSlides(slideIndex += n);
+  }
+  
+  function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+  }
+  </script>
+  
+  
+  
 
   <!-- End page content -->
 
