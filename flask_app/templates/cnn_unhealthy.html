@@ -100,9 +100,8 @@
         tomrslt = document.getElementById('tomresult')
         rslt = document.getElementById('result')
         fname = imgfile.replace("\\","/")
-        tomrslt.innerHTML = "<img src=\"/static/images/rotten_tomato.jpg\" style=\"width:100px;height:100px;\">" 
-        rslt.innerHTML = "<p>I am " + regval 
-            + "% sure that this leaf is <u>NOT</u> healthy.</p> <img src=\"/static/images/Leaf/" 
+        tomrslt.innerHTML = "<img src=\"/static/images/rotten_tomato.jpg\" style=\"width:100px;height:100px;\"><img src=\"/static/images/Names/" + regval + ".png\" style=\"height:100px;\">" 
+        rslt.innerHTML = "<img src=\"/static/images/Leaf/" 
             + fname + "\"></p><br>filename: " + fname + "<br> "
     </script>
 
