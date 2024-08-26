@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>KNN Model</title>
+    <title>CNN Model</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -45,7 +45,7 @@
             <a href="/overview" class="w3-button w3-block w3-black">OVERVIEW</a>
         </div>
         <div class="w3-col s3">
-            <a href="/knn" class="w3-button w3-block w3-black">MODELS</a>
+            <a href="/cnn" class="w3-button w3-block w3-black">MODELS</a>
         </div>
         <div class="w3-col s3">
             <a href="/dashboard" class="w3-button w3-block w3-black">DASHBOARD</a>
@@ -92,7 +92,7 @@
     <div class="w3-light-grey w3-display-container w3-col" style="padding-left:150px">
         <h5><b><span id="tomresult"></span></b></h5>
         <div id="result" style="padding-left: 0px">
-            <p>THIS LEAF IS NOT HEALTHY.</p>
+            <p>THIS LEAF IS HEALTHY.</p>
         </div>
         <br>
     </div>
@@ -100,10 +100,9 @@
         tomrslt = document.getElementById('tomresult')
         rslt = document.getElementById('result')
         fname = imgfile.replace("\\","/")
-        tomrslt.innerHTML = "<img src=\"/static/images/rotten_tomato.jpg\" style=\"width:100px;height:100px;\">" 
-        rslt.innerHTML = "<p>I am " + regval 
-            + "% sure that this leaf is <u>NOT</u> healthy.</p> <img src=\"/static/images/Leaf/" 
-            + fname + "\"></p><br>filename: " + fname + "<br> "
+        tomrslt.innerHTML = "<img src=\"/static/images/ripe_tomato.png\" style=\"width:100px;height:100px;\">" 
+        rslt.innerHTML = "<p>I am " + regval + "% sure that this leaf is <u>HEALTHY</u>.</p> <img src=\"/static/images/Leaf/" + fname + "\"><br>filename: " + fname + "<br> "
+    
     </script>
 
 </body>

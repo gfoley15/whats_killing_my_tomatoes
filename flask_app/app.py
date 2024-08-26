@@ -17,7 +17,7 @@ def preprocess_image(image_path):
 
 @app.route("/")
 def default():
-    return render_template('index.html')
+    return render_template('home.html')
 
 @app.route("/home")
 def home():
@@ -27,9 +27,9 @@ def home():
 def overview():
     return render_template('overview.html') 
 
-@app.route("/knn", methods=["GET", "POST"])
-@app.route('/knn/<imagesrc>/<regvalue>', methods=["GET", "POST"])
-def knn_route():
+@app.route("/cnn", methods=["GET", "POST"])
+@app.route('/cnn/<imagesrc>/<regvalue>', methods=["GET", "POST"])
+def cnn_route():
     if request.method == 'POST':
         if 'image' not in request.files:
             return jsonify({"error": "No file part"})
@@ -55,11 +55,11 @@ def knn_route():
             passpercent = str(round((valpercent_inv[0]*100), ndigits=2))
 
             if rslt == 0:
-                return render_template('knn_healthy.html', imagesrc=filename, regvalue=passpercent)
+                return render_template('cnn_healthy.html', imagesrc=filename, regvalue=passpercent)
             else:
-                return render_template('knn_unhealthy.html', imagesrc=filename, regvalue=failpercent)
+                return render_template('cnn_unhealthy.html', imagesrc=filename, regvalue=failpercent)
     else:
-        return render_template('knn.html')
+        return render_template('cnn.html')
 
 @app.route("/dashboard")
 def dashboard():
