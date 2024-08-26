@@ -68,18 +68,35 @@
 
     <!-- Model Descriptions -->
 <div class="w3-light-grey w3-display-container w3-col s12" style="padding-left:150px; padding-right:150px;">
-  <h5><b>Model Description</b></h5>
-  
-<!-- Confusion Matrix Comparison -->
-<div class="w3-light-grey w3-display-container w3-col s6" style="padding-left:150px">
-  <div id="Matrix" style="padding-left: 0px">
-      <!-- Images for Confusion Matrix -->
-      <h6>Analysis</h6>
-      <img src='../static/images/TomatoDiseases_nn_accuracy.png' alt="TomatoDiseases_nn_accuracy.png" style="width:100%; max-width:500px;">
-      <img src='../static/images/TomatoDiseases_nn_loss.png' alt="TomatoDiseases_nn_loss.png" style="width:100%; max-width:500px;">
+     <h5>nn_Tomatodiseases model</h6>
+      <p>The nn_Tomatodiseases model relies on Neuro Networks to help in classification of tomato disease dataset. The
+        model used 119,211 PARAMS for training and prediction with 100 EPOCH. Initial EPOCH accuracy started at 67% and
+        kept improving as more iterations were added.
+        Overall the model shows strong performance with an accuracy of 97%. This means using this model can classify
+        unhealthy from healthy plant tissue images.
+        Tune  adjusting layers and activation were done to improve accuracy, however because of computation time, a higher
+        order of tuning was not done. The few iterations tried gave an average accuracy of 97%.
+        a review of loss across different EPOCHS showed a steady decline of loss from almost 62% to 10% by the time EPOCH
+        100 was reached</p>
+
+<!-- Accuracy for neuro network images-->
+  <div class="w3-light-grey w3-display-container w3-col s6" style="padding-left:150px">
+    <h5><b>TomatoDiseases_nn_accuracy</b></h5>
+    <div id="Matrix" style="padding-left: 0px">
+
+
+  <!-- Images for Neuro network -->
+      <h6>Chart</h6>
+      <img src='./Output/Neuro_Network_params.png' alt="Neuro network params used" style="width:100%; max-width:500px;">
+      <br>
+      <img src='./Output/TomatoDiseases_nn_accuracy.png' alt="Accuracy in Neuro network"
+        style="width:100%; max-width:500px;">
+      <br>
+      <h6>Chart</h6>
+      <img src='./Output/TomatoDiseases_nn_loss.png' alt="Loss in Neuro network" style="width:100%; max-width:500px;">
+    </div>
+    <br>
   </div>
-  <br>
-</div>
 
   <!-- End page content -->
 
