@@ -72,11 +72,40 @@
 <div class="w3-container" id="OVERVIEW">
   <div class="w3-content" style="max-width:1000px">
     <h1 class="w3-center w3-padding-10"><b>CNN IMAGE CLASSIFICATION OVERVIEW</b></h1>
+    <h2 class="w3-center w3-padding-10"><b>Code: 03_Tomato_Training_John.ipynb</b></h2>
     <h2 class="w3-center w3-padding-10"><b>Model: Healthy_or_Sick.h5</b></h2>
     <hr>
     <h4><p>This CNN was built using a Tensorflow Keras Model. 3000 images from 2 basic categories were used.</p></h4>
     <div style="border-style: solid; border-width: 5px; border-radius: 25px;padding:20px;"><p>MODEL TRAINING RESULTS:</p>
-
+      <b><u>Code Summary</u></b>
+      <blockquote>
+      Model: "sequential"<br>
+      _________________________________________________________________<br>
+      Layer (type)                Output Shape              Param #   <br>
+      =================================================================<br>
+      conv2d (Conv2D)             (None, 254, 254, 32)      896       <br>
+      <br>
+      max_pooling2d (MaxPooling2D)  (None, 127, 127, 32)      0         <br>                                   
+      <br>
+      conv2d_1 (Conv2D)           (None, 125, 125, 32)      9248      <br>
+      <br>
+      max_pooling2d_1 (MaxPooling2D)  (None, 62, 62, 32)        0         <br>
+                                                                  
+      <br>
+      flatten (Flatten)           (None, 123008)            0         <br>
+      <br>
+      dense (Dense)               (None, 64)                7872576   <br>
+      <br>
+      dense_1 (Dense)             (None, 1)                 65        <br>
+      <br>
+      =================================================================<br>
+      Total params: 7882785 (30.07 MB)<br>
+      Trainable params: 7882785 (30.07 MB)<br>
+      Non-trainable params: 0 (0.00 Byte)<br>
+      _________________________________________________________________<br>
+      <br>
+      <hr>
+      <p><b>model.fit(x_train,y_train,epochs=5,batch_size=64)</b></p>
       Epoch 1/5<br>
       38/38 [==============================] - 66s 2s/step - loss: 0.8523 - accuracy: 0.6762<br>
       Epoch 2/5<br>
@@ -87,6 +116,7 @@
       38/38 [==============================] - 64s 2s/step - loss: 0.0431 - accuracy: 0.9887<br>
       Epoch 5/5<br>
       38/38 [==============================] - 64s 2s/step - loss: 0.0221 - accuracy: 0.9937<br>
+    </blockquote>
     </div>
   </div>
   <hr>
