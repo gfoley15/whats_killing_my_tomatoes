@@ -28,7 +28,7 @@
 <h3> Part IV: Limitations and Next Steps</h3>
 <p><strong>Limitations:</strong>
 
-- Class imabalance (more unhealthy than healthy) 
+- Class imbalance (more unhealthy than healthy) 
   
 - Training/running time
 
