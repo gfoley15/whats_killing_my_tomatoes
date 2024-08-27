@@ -73,49 +73,78 @@
   <div class="w3-content" style="max-width:1000px">
     <h1 class="w3-center w3-padding-10"><b>CNN IMAGE CLASSIFICATION OVERVIEW</b></h1>
     <h2 class="w3-center w3-padding-10"><b>Code: 03_Tomato_Training_John.ipynb</b></h2>
-    <h2 class="w3-center w3-padding-10"><b>Model: Healthy_or_Sick.h5</b></h2>
+    <h2 class="w3-center w3-padding-10"><b>Model: all_cat.h5</b></h2>
     <hr>
-    <h4><p>This CNN was built using a Tensorflow Keras Model. 3000 images from 2 basic categories were used.</p></h4>
-    <div style="border-style: solid; border-width: 5px; border-radius: 25px;padding:20px;"><p>MODEL TRAINING RESULTS:</p>
-      <b><u>Code Summary</u></b>
+    <h4><p>This CNN was built using a Tensorflow Keras Model. 3700 images from 10 categories were used.</p></h4>
+    <div style="border-style: solid; border-width: 5px; border-radius: 25px;padding:20px;"><p><b>MODEL TRAINING RESULTS:</b></p>
       <blockquote>
-      Model: "sequential"<br>
-      _________________________________________________________________<br>
-      Layer (type)                Output Shape              Param #   <br>
-      =================================================================<br>
-      conv2d (Conv2D)             (None, 254, 254, 32)      896       <br>
+        <b><u>Categories</u></b><br>
+
+        Class name =  Bacterial_spot<br>
+        Class name =  Early_blight<br>
+        Class name =  Healthy<br>
+        Class name =  Late_blight<br>
+        Class name =  Leaf_Mold<br>
+        Class name =  Mosaic_virus<br>
+        Class name =  Septoria_leaf_spot<br>
+        Class name =  Target_Spot<br>
+        Class name =  Two_spotted_spider_mite<br>
+        Class name =  YellowLeaf__Curl_Virus<br>
+      </div>
       <br>
-      max_pooling2d (MaxPooling2D)  (None, 127, 127, 32)      0         <br>                                   
+      <div style="border-style: solid; border-width: 5px; border-radius: 25px;padding:20px;">
+        <b><u>Compiled Model Summary</u></b><br>
+        Model: "sequential"<br>
+        _________________________________________________________________<br>
+        Layer (type)                Output Shape              Param #   <br>
+        =================================================================<br>
+        conv2d (Conv2D)             (None, 254, 254, 32)      896       <br>
+        <br>
+        max_pooling2d (MaxPooling2D)  (None, 127, 127, 32)      0         <br>
+        <br>
+        conv2d_1 (Conv2D)           (None, 125, 125, 32)      9248      <br>
+        <br>
+        max_pooling2d_1 (MaxPooling2D)  (None, 62, 62, 32)        0         <br>                                                          
+        <br>
+        flatten (Flatten)           (None, 123008)            0         <br>
+        <br>
+        dense (Dense)               (None, 64)                7872576   <br>
+        <br>
+        dense_1 (Dense)             (None, 10)                650       <br>
+        <br>
+        =================================================================<br>
+        Total params: 7883370 (30.07 MB)<br>
+        Trainable params: 7883370 (30.07 MB)<br>
+        Non-trainable params: 0 (0.00 Byte)<br>
+        _________________________________________________________________<br>
+        <br>
+        <hr>
+      </div>
       <br>
-      conv2d_1 (Conv2D)           (None, 125, 125, 32)      9248      <br>
-      <br>
-      max_pooling2d_1 (MaxPooling2D)  (None, 62, 62, 32)        0         <br>
-                                                                  
-      <br>
-      flatten (Flatten)           (None, 123008)            0         <br>
-      <br>
-      dense (Dense)               (None, 64)                7872576   <br>
-      <br>
-      dense_1 (Dense)             (None, 1)                 65        <br>
-      <br>
-      =================================================================<br>
-      Total params: 7882785 (30.07 MB)<br>
-      Trainable params: 7882785 (30.07 MB)<br>
-      Non-trainable params: 0 (0.00 Byte)<br>
-      _________________________________________________________________<br>
-      <br>
-      <hr>
-      <p><b>model.fit(x_train,y_train,epochs=5,batch_size=64)</b></p>
-      Epoch 1/5<br>
-      38/38 [==============================] - 66s 2s/step - loss: 0.8523 - accuracy: 0.6762<br>
-      Epoch 2/5<br>
-      38/38 [==============================] - 66s 2s/step - loss: 0.1434 - accuracy: 0.9425<br>
-      Epoch 3/5<br>
-      38/38 [==============================] - 67s 2s/step - loss: 0.0881 - accuracy: 0.9675<br>
-      Epoch 4/5<br>
-      38/38 [==============================] - 64s 2s/step - loss: 0.0431 - accuracy: 0.9887<br>
-      Epoch 5/5<br>
-      38/38 [==============================] - 64s 2s/step - loss: 0.0221 - accuracy: 0.9937<br>
+      <div style="border-style: solid; border-width: 5px; border-radius: 25px;padding:20px;">
+        <p><b>Model Training</b></p>
+        model.fit(x_train,y_train,epochs=10,batch_size=37)<br>
+        Epoch 1/10<br>
+        80/80 [==============================] - 78s 884ms/step - loss: 0.0902 - accuracy: 0.8666<br>
+        Epoch 2/10<br>
+        80/80 [==============================] - 69s 867ms/step - loss: 0.0544 - accuracy: 0.9341<br>
+        Epoch 3/10<br>
+        80/80 [==============================] - 77s 965ms/step - loss: 0.0310 - accuracy: 0.9726<br>
+        Epoch 4/10<br>
+        80/80 [==============================] - 72s 893ms/step - loss: 0.0196 - accuracy: 0.9875<br>
+        Epoch 5/10<br>
+        80/80 [==============================] - 73s 918ms/step - loss: 0.0143 - accuracy: 0.9926<br>
+        Epoch 6/10<br>
+        80/80 [==============================] - 75s 937ms/step - loss: 0.0081 - accuracy: 0.9976<br>
+        Epoch 7/10<br>
+        80/80 [==============================] - 70s 872ms/step - loss: 0.0057 - accuracy: 0.9993<br>
+        Epoch 8/10<br>
+        80/80 [==============================] - 70s 873ms/step - loss: 0.0020 - accuracy: 1.0000<br>
+        Epoch 9/10<br>
+        80/80 [==============================] - 73s 915ms/step - loss: 0.0014 - accuracy: 1.0000<br>
+        Epoch 10/10<br>
+        80/80 [==============================] - 70s 879ms/step - loss: 4.4689e-04 - accuracy: 1.0000<br>
+      </div>
     </blockquote>
     </div>
   </div>
@@ -124,22 +153,8 @@
     <div style="border-style: solid; border-width: 5px; border-radius: 25px;padding:20px;">
       <p>MODEL EVALUATION RESULTS:</p>
 
-    19/19 [==============================] - 4s 191ms/step - loss: 0.1004 - accuracy: 0.9633<br>
-    [0.10043543577194214, 0.9633333086967468]<br>
-    </div>
-  </div>
-  <hr>
-  <div class="w3-content" style="max-width:1000px">
-    <div style="border-style: solid; border-width: 5px; border-radius: 25px;padding:20px;">
-      <p>RANDOM IMAGE PREDICTION RESULTS:</p>
-
-      The model is 96% sure Leaf #1.png is healthy<br>
-      The model is 100% sure Leaf #2.png is sick<br>
-      The results are correct.<br>
-      <br>
-      Leaf #1 / Leaf #2<br>
-      <img src='../static/images/Leaf_1.png'><img src="../static/images/Leaf_2.png">
-      
+      24/24 [==============================] - 4s 162ms/step - loss: 0.2261 - accuracy: 0.7676<br>
+      [0.22612068057060242, 0.7675675749778748]<br>
     </div>
   </div>
 </div>
