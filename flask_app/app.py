@@ -59,7 +59,7 @@ def cnn_route():
             predict_x=Healthy_or_Sick.predict(image) 
             classes_x=np.argmax(predict_x,axis=1)
             model_class = names.get(classes_x[0])
-            if model_class == "Healthy":
+            if model_class == "healthy":
                 return render_template('cnn_healthy.html', imagesrc=filename, regvalue=model_class)
             else:
                 return render_template('cnn_unhealthy.html', imagesrc=filename, regvalue=model_class)
