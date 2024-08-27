@@ -28,15 +28,21 @@
 <h3> Part IV: Limitations and Next Steps</h3>
 <p><strong>Limitations:</strong>
 
-  - insert text here
+- Class imabalance (more unhealthy than healthy) 
   
-- insert text here
+- Training/running time
+
+- Large model size
   
-- insert text here</p>
+- Time</p>
 <p><strong>Next Steps:</strong>
 
-- insert text here
+- Utilize Google Colab
   
-- insert text here
+- Rotate/Flip Images
   
-- insert text here</p>
+- Additional Training
+
+- Add to MongoDB
+
+- Model size reduction</p>
